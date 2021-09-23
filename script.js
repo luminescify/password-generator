@@ -29,7 +29,7 @@ function generatePassword() {
   if (!passwordLength) {
       alert("Please enter a value.");
   } else if (passwordLength < 8 || passwordLength > 128) {
-      parseInt(alert("Please choose a length between 8 and 128"));
+      passwordLength = parseInt(alert("Please choose a length between 8 and 128"));
   } else { 
       usesNumbers = confirm("Include numbers?");
       usesSpecialCharacters = confirm("Include special characters?");
@@ -95,12 +95,11 @@ function generatePassword() {
     selectedChars = uppercaseCharacters;
   }
 
-  
+
   var password = [];
 
   for (var i = 0; i < passwordLength; i++) {
     var passwordText = selectedChars[Math.floor(Math.random() * selectedChars.length)];
-    password.push(passwordText);
+    password.push(passwordText.value);
   }
 } 
-
