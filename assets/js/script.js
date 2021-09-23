@@ -4,6 +4,7 @@ var lowercaseCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"
 var numbCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharacters = ["@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
 
+// Pre-declared global variables
 var selectedChars;
 var passwordLength;
 var usesNumbers;
@@ -25,7 +26,7 @@ generateBtn.addEventListener("click", function writePassword() {
   passwordText.value = password;
 });
 
-
+// Run function to generate a random password based off user selected length
 function generatePassword() {
   passwordLength = parseInt(prompt("Enter the desired length of your password:"));
   if (!passwordLength) {
@@ -97,7 +98,7 @@ function generatePassword() {
     selectedChars = uppercaseCharacters;
   }
 
-  // Array placeholder for user chosen length
+  // String placeholder for user chosen length
   var password = "";
   for (var i = 0; i < passwordLength; i++) {
     var password = password + selectedChars[Math.floor(Math.random() * selectedChars.length)];
